@@ -12,29 +12,48 @@
 </head>
 <body>
     <center>
+        <div >
+            <img src="/i/logo.jpg" style="height: 100px; width: 100px; float: left">
+        </div>
         <fieldset>
             <legend><h1>Product List</h1></legend>
             <a href="/create-new">Create new Product</a>
-            <table border="1px" style="border-collapse: collapse" enctype="multipart/form-data">
-                <tr >
-                    <th>Id</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Producer</th>
-                    <th>Avatar</th>
-                    <th colspan="3">More Option</th>
-                </tr>
-                <tr th:each="product:${products}">
-                    <td th:text="${product.getId()}"></td>
-                    <td th:text="${product.getName()}"></td>
-                    <td th:text="${product.getPrice()}"></td>
-                    <td th:text="${product.getProducer()}"></td>
-                    <td><img width="150px" height="150px" th:src="@{'/i/' + ${product.getAvatar()}}"></td>
-                    <td><a th:href="@{/edit/__${product.getId()}__}">Edit</a></td>
-                    <td><a th:href="@{/detail/__${product.getId()}__}">Detail</a></td>
-                    <td><a th:href="@{/delete/__${product.getId()}__}">Delete</a></td>
-                </tr>
-            </table>
+            <div>
+                <div>
+                    <table  enctype="multipart/form-data" th:each="product:${products}">
+                        <tr>
+                            <td>Name:</td>
+                            <td th:text="${product.getName()}"></td>
+                        </tr>
+                        <tr>
+                            <td>Price:</td>
+                            <td th:text="${product.getPrice()}"></td>
+                        </tr>
+                        <tr>
+                            <td>Producer:</td>
+                            <td th:text="${product.getProducer()}"></td>
+                        </tr>
+                        <tr>
+                            <td>Avatar:</td>
+                            <td><img style="width: 150px; height: 150px" th:src="@{'/i/' + ${product.getAvatar()}}"></td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                More Option:
+                            </td>
+                            <td><a th:href="@{/edit/__${product.getId()}__}">Edit</a></td>
+                            <td><a th:href="@{/detail/__${product.getId()}__}">Detail</a></td>
+                            <td><a th:href="@{/delete/__${product.getId()}__}">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div><hr></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
         </fieldset>
     </center>
 </body>

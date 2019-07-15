@@ -40,7 +40,6 @@ import java.util.Properties;
 @ComponentScan("com.codegym")
 public class ApplicationConfig extends WebMvcConfigurerAdapter implements ApplicationContextAware {
 
-    public final String UPLOAD_DIR ="E:\\TuLuyen\\image";
     private ApplicationContext applicationContext;
 
     @Override
@@ -139,7 +138,7 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
 
         // Image resource.
         registry.addResourceHandler("/i/**") //
-                .addResourceLocations("/WEB-INF/static/image/");
+                .addResourceLocations("/static/image/");
 
         // Css resource.
         registry.addResourceHandler("/styles/**") //

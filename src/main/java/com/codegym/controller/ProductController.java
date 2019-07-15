@@ -14,7 +14,7 @@ import java.io.*;
 @Controller
 public class ProductController {
 
-    public final String UPLOAD_DIR ="E:\\TuLuyen\\product-jpa\\src\\main\\webapp\\WEB-INF\\static\\image\\";
+    public final String UPLOAD_DIR ="E:\\TuLuyen\\product-jpa\\src\\main\\webapp\\static\\image\\";
     @Autowired
     private ProductService productService;
 

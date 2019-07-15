@@ -8,6 +8,7 @@
     <center>
         <fieldset>
             <legend><h1>Create Product</h1></legend>
+            <a href="/list">Back to list</a>
             <form th:action="@{/create}" method="post" th:object="${productForm}" enctype="multipart/form-data">
                 <table>
                     <tr>
