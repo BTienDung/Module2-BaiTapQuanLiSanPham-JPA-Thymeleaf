@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product List</title>
+</head>
+<body>
+    <center>
+        <div th:each="productDetail:${product}">
+            <fieldset>
+                <legend><h1>Detail Product</h1></legend>
+                <table border="1px" style="border-collapse: collapse">
+                    <tr>
+                        <td>Id</td>
+                        <td th:text="${productDetail.getId()}"></td>
+                    </tr>
+                    <tr>
+                        <td>Name</td>
+                        <td th:text="${productDetail.getName()}"></td>
+                    </tr>
+                    <tr>
+                        <td>Price</td>
+                        <td th:text="${productDetail.getPrice()}"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Producer</td>
+                        <td th:text="${productDetail.getProducer()}"></td>
+                    </tr>
+                    <tr>
+                        <td>Image</td>
+                        <td><img style="width: 100px; height: 100px" th:src="@{'/i/' + ${productDetail.getAvatar()}}"></td>
+                    </tr>
+                </table>
+                <a th:href="@{/list}">Back to list</a>
+            </fieldset>
+        </div>
+    </center>
+
+</body>
+</html>
